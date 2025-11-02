@@ -10,3 +10,5 @@ How to setup and run:
 
 Using the Application
 After starting the application, choose the option you want to execute from the menu. For example, if you want to view the database, simply input "1" to select option 1.
+
+Video Demonstration: https://www.youtube.com/watch?v=FRZMsYJw6QQ

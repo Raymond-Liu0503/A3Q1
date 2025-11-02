@@ -1,7 +1,6 @@
 # Raymond Liu 101264487
 from sqlalchemy import create_engine, Column, Integer, String, Date
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
 from datetime import date
 
 from sqlalchemy import create_engine
@@ -77,22 +76,26 @@ def deleteStudent(student_id):
     session.close()
 
 if __name__ == "__main__":
-    option = input("Choose an option: 1) View Students 2) Add Student 3) Update Student 4) Delete Student\n")
-    if option == '1':
-        getAllStudents()
-    elif option == '2':
-        first_name = input("First Name: ")
-        last_name = input("Last Name: ")
-        email = input("Email: ")
-        addStudent(first_name, last_name, email)
-    elif option == '3':
-        student_id = int(input("Student ID to update: "))
-        first_name = input("New First Name (leave blank to keep current): ")
-        last_name = input("New Last Name (leave blank to keep current): ")
-        email = input("New Email (leave blank to keep current): ")
-        updateStudent(student_id, first_name or None, last_name or None, email or None)
-    elif option == '4':
-        student_id = int(input("Student ID to delete: "))
-        deleteStudent(student_id)
-    else:
-        print("Invalid option")
+   
+    while True:
+        option = input("\nChoose an option:\n 1) View Students\n 2) Add Student\n 3) Update Student\n 4) Delete Student\n 5) Exit\n")
+        if option == '1':
+            getAllStudents()
+        elif option == '2':
+            first_name = input("First Name: ")
+            last_name = input("Last Name: ")
+            email = input("Email: ")
+            addStudent(first_name, last_name, email)
+        elif option == '3':
+            student_id = int(input("Student ID to update: "))
+            first_name = input("New First Name (leave blank to keep current): ")
+            last_name = input("New Last Name (leave blank to keep current): ")
+            email = input("New Email (leave blank to keep current): ")
+            updateStudent(student_id, first_name or None, last_name or None, email or None)
+        elif option == '4':
+            student_id = int(input("Student ID to delete: "))
+            deleteStudent(student_id)
+        elif option == '5':
+            break
+        else:
+            print("Invalid option")
