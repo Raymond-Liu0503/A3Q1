@@ -1,7 +1,9 @@
 A3 Q1
 Raymond Liu 101264487
+### Setting up the database
+Run the database creation scripts in the create_db.txt file.
 
-### How to setup and run:
+### How to setup and run application:
 1. Setup a python virtual environment
 2. Pip install sqlalchemy and psycopg2 or psycopg2-binary
 3. Activate your virtual environment
