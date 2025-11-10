@@ -82,10 +82,16 @@ if __name__ == "__main__":
         if option == '1':
             getAllStudents()
         elif option == '2':
-            first_name = input("First Name: ")
-            last_name = input("Last Name: ")
-            email = input("Email: ")
-            addStudent(first_name, last_name, email)
+            first_name = input("First Name: ").strip()
+            last_name = input("Last Name: ").strip()
+            email = input("Email: ").strip()
+
+            if not first_name or not last_name or not email:
+                print("Error: Field(s) shouldn't be empty")
+            elif '@' not in email:
+                print("Error: Invalid email format")
+            else:
+                addStudent(first_name, last_name, email)
         elif option == '3':
             student_id = int(input("Student ID to update: "))
             first_name = input("New First Name (leave blank to keep current): ")
