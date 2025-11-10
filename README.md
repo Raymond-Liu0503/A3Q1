@@ -14,4 +14,5 @@ Run the database creation scripts in the create_db.txt file.
 
 After starting the application, choose the option you want to execute from the menu. For example, if you want to view the database, simply input "1" to select option 1.
 
+Note: Video demonstration was recorded before I added more error handling
 Video Demonstration: https://www.youtube.com/watch?v=3cQDdnDJtao
